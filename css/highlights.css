@@ -1,0 +1,239 @@
+.highlights {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  height: 85vh;
+  background: linear-gradient(to bottom, var(--azul-escuro), var(--verde-escuro));
+}
+
+.highlights-wrapper {
+  margin-top: 50px;
+  display: grid;
+  width: 75%;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  height: 480px;
+  overflow: hidden;
+}
+
+.card-large {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  border: 1px solid var(--laranja);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.card-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.card-side {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  height: 100%;
+  
+}
+
+.card-small {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: all 0.5s ease;
+  border: 1px solid var(--laranja);
+  border-radius: 10px;
+
+}
+
+.card-small:first-child:hover {
+  border: 3px solid var(--azul-escuro);
+  transition: all 0.5s ease;
+}
+
+.card-small img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.card-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--azul-escuro);
+  color: var(--branco);
+  font-family: 'Gabarito', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 12px;
+  z-index: 2;
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+.card-title.small {
+  text-align: center;
+  font-size: 18px;
+}
+
+.card-large:hover .card-title,
+.card-small:hover .card-title {
+  transform: translateY(0);
+  opacity: 0.8;
+  background: var(--azul-escuro);
+}
+
+.badge-group {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+.badge {
+  background: var(--azul-escuro);
+  color:var(--laranja);
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Gabarito', sans-serif;
+  transition: background 0.3s ease;
+  border-radius: 200px;
+  opacity: 0.8;
+}
+
+.card-small:first-child:hover .badge {
+  background: var(--branco);
+  border-radius: 200px;
+  color: var(--azul-escuro);
+  opacity: 1;
+}
+
+.discount {
+  background: var(--azul-escuro);
+  opacity: 0.8;
+  color:var(--branco);
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 200px;
+  font-family: 'Gabarito', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.card-small:first-child:hover .discount {
+  background: var(--laranja);
+  color: var(--azul-escuro);
+  opacity: 1;
+
+}
+
+.card-large img,
+.card-small img {
+  transition: transform 0.5s ease;
+}
+
+.card-large:hover img,
+.card-small:hover img {
+  transform: scale(1.02);
+  transition: transform 0.5s ease;
+}
+
+.card-large {
+  position: relative;
+}
+
+.card-large::before,
+.card-small::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.card-large:hover::before,
+.card-small:hover::before {
+  opacity: 1;
+}
+
+.card-large::before {
+  background-image: url('/gifs/bravery.gif');
+}
+
+.card-small:first-child::before {
+  background-image: url('/gifs/9kings.gif');
+}
+
+.card-small:last-child::before {
+  background-image: url('/gifs/enigma.gif');
+}
+
+.card-large:hover img,
+.card-small:hover img {
+  opacity: 0;
+}
+
+.card-large img,
+.card-small img {
+  position: relative;
+  z-index: 1;
+}
+
+.card-small img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .highlights {
+    height: auto;
+    padding: 30px 0;
+  }
+
+  .highlights-wrapper {
+    grid-template-columns: 1fr;
+    width: 95%;
+    height: auto;
+  }
+
+  .card-large {
+    height: 220px;
+  }
+
+  .card-side {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    height: 160px;
+  }
+}

@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --azul-escuro: #151D27;
+  --azul-marinho: #0A2239;
+  --laranja: #F49200;
+  --branco: #fefefe;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--azul-marinho);
+  background-image: url(../imgs/background/fundo.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gabarito", "Arial", sans-serif;
+}
+
+/* Voltar */
+.voltar {
+  position: fixed;
+  top: 28px;
+  right: 36px;
+  color: var(--branco);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s;
+}
+
+.voltar:hover { opacity: 0.7; }
+
+/* Card central */
+.form-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 48px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* Logo */
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.logo-area img {
+  height: 40px;
+}
+
+.logo-area span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--branco);
+  font-family: "Anton SC", "Arial", sans-serif;
+  letter-spacing: 2px;
+}
+
+/* Subtítulo */
+.form-subtitle {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.95rem;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 32px;
+  max-width: 320px;
+}
+
+/* Formulário */
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Campo com ícone */
+.input-field {
+  position: relative;
+  width: 100%;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 14px 46px 14px 20px;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: 100px;
+  color: var(--branco);
+  font-size: 0.95rem;
+  font-family: "Gabarito", "Arial", sans-serif;
+  outline: none;
+  transition: border-color 0.25s;
+}
+
+.input-field input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.input-field input:focus {
+  border-color: var(--laranja);
+}
+
+.input-field .field-icon {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+/* Esqueceu a senha */
+.forgot {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.85rem;
+  text-align: center;
+  text-decoration: none;
+  margin-top: -4px;
+  transition: color 0.2s;
+}
+
+.forgot:hover { color: var(--branco); }
+
+/* Botão principal */
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: var(--laranja);
+  border: none;
+  border-radius: 100px;
+  color: var(--branco);
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Gabarito", "Arial", sans-serif;
+  cursor: pointer;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover { opacity: 0.88; }
+
+/* Rodapé do form */
+.form-footer {
+  margin-top: 20px;
+  color: rgba(255,255,255,0.65);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.form-footer a {
+  color: var(--branco);
+  text-decoration: underline;
+  font-weight: 600;
+  margin-left: 4px;
+  transition: color 0.2s;
+}
+
+.form-footer a:hover { color: var(--laranja); }

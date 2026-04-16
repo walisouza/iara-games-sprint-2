@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --azul-escuro: #151D27;
+  --azul-marinho: #0A2239;
+  --laranja: #F49200;
+  --azul-claro:#0B7CB9;
+  --branco: #fefefe;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--azul-marinho);
+  background-image: url(../imgs/background/fundo.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gabarito", "Arial", sans-serif;
+  padding: 40px 24px;
+}
+
+/* Voltar */
+.voltar {
+  position: fixed;
+  top: 28px;
+  right: 36px;
+  color: var(--branco);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+.voltar:hover { opacity: 0.7; }
+
+/* Layout principal: duas colunas */
+.pref-wrapper {
+  width: 100%;
+  max-width: 960px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── Coluna esquerda ── */
+.pref-left {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Saudação */
+.greeting h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--branco);
+  margin-bottom: 6px;
+}
+.greeting p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Bloco de preferência */
+.pref-block h3 {
+  color: var(--branco);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Grade de tags */
+.tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Tag — checkbox e radio estilizados como pill */
+.tag {
+  cursor: pointer;
+}
+
+.tag input {
+  display: none;
+}
+
+.tag span {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 100px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "Gabarito", "Arial", sans-serif;
+  font-size: 0.82rem;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  user-select: none;
+}
+
+.tag:hover span {
+  border-color: rgba(255, 255, 255, 0.8);
+  color: var(--branco);
+}
+
+/* Selecionado */
+.tag input:checked + span {
+  background: var(--azul-claro);
+  border-color: var(--branco);
+  color: var(--branco);
+  font-weight: 600;
+}
+
+/* Botão Entrar */
+.btn-entrar {
+  align-self: flex-start;
+  padding: 12px 40px;
+  background: var(--laranja);
+  border: none;
+  border-radius: 100px;
+  color: var(--branco);
+  font-family: "Gabarito", "Arial", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.btn-entrar:hover { opacity: 0.88; }
+
+/* ── Coluna direita ── */
+.pref-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.avatar-header h2 {
+  color: var(--branco);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.avatar-header p {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.85rem;
+}
+
+/* Caixa do avatar */
+.avatar-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.avatar-box h3 {
+  color: var(--branco);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Grade 3x3 */
+.avatar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+/* Cada opção de avatar */
+.avatar-option {
+  cursor: pointer;
+}
+
+.avatar-option input {
+  display: none;
+}
+
+.avatar-option span {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2.5px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.avatar-option:hover span {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.avatar-option input:checked + span {
+  border-color: var(--laranja);
+  background: rgba(244, 146, 0, 0.15);
+}
+
+/* ── Responsivo ── */
+@media (max-width: 768px) {
+  .pref-wrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .voltar {
+    top: 16px;
+    right: 20px;
+  }
+}

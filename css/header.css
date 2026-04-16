@@ -1,0 +1,290 @@
+.topbar {
+  padding: 22px  ;
+  background-color: #151D27;
+  color: var(--branco);
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.site-logo {
+  width: auto;
+  height: 45px;
+  object-fit: contain;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 400;
+  font-family: "Anton SC", sans-serif;
+  color: #fefefe;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.menu a {
+  font-family: "gabarito", sans-serif;
+  color:var(--branco);
+  text-decoration: none;
+  font-weight:400;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.menu a:hover {
+  color: var(--laranja);
+  letter-spacing: 0.8px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: var(--laranja);
+  padding: 12px 12px;
+  border-radius: 200px;
+
+
+}
+
+.user a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 200;
+  font-size: 1rem;
+  font-family: "gabarito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.user a:hover {
+  color: var(--azul-marinho);
+}
+
+.user i {
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.user i:hover {
+  color: #BFEDE9;
+}
+
+.navbar {
+  padding: 14px 20px;
+  background-color: var(--azul-marinho);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-sec {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  font-weight: 300;
+  font-size: 0.9rem;
+  font-family: "Gabarito", sans-serif;
+}
+
+.menu-sec a {
+  transition: all 0.3s ease;
+  color: var(--branco);
+  text-decoration: none;
+}
+
+.menu-sec a:hover {
+  color: var(--laranja);
+  letter-spacing: 1px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--branco);
+  padding: 10px 20px;
+  width: 300px;
+  border-radius: 200px;
+  transition: all 0.7s ease;
+}
+
+.search-box:focus-within {
+  border-radius: 50px;
+  border-color: #ffffff;
+  background-color: transparent;
+  width: 380px;
+}
+
+.search-box i {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.search-box i:hover {
+  color: #BFEDE9;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  color: white;
+  font-family: "Gabarito", sans-serif;
+}
+
+.search-box input::placeholder {
+  color: #D9D9D9;
+  font-weight: 400;
+  font-size: 0.8rem;
+  font-family: "Gabarito", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.search-box:focus-within input::placeholder {
+  color: transparent;
+}
+
+.dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+
+  
+}
+
+.menu > ul > li {
+  position:relative
+  
+}
+
+.dropdown {
+    font-size: 0.8rem;
+
+  color: var(--branco);
+  position: relative;
+  transform: translateY(0px);
+  transition: all 0.25s ease;
+  z-index: 1000;
+  border:  1px solid;
+  padding: 10px 20px;
+  border-radius: 100px;
+}
+
+.fa-chevron-down {
+  font-size: 12px;
+  margin-left: 5px;
+  transition: transform 0.25s ease;
+}
+
+.dropdown:hover .fa-chevron-down {
+  transform: rotate(180deg);
+}
+.dropdown-menu {
+  position: absolute;
+  top:100%;
+  left: 0;
+  background-color: var(--azul-marinho);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 20px;
+  color: var(--branco);
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: var(--azul-escuro);
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    padding: 14px;
+  }
+
+  .left {
+    gap: 16px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .site-logo {
+    height: 32px;
+  }
+
+  .user {
+    padding: 8px 10px;
+  }
+
+  .navbar {
+    padding: 10px 14px;
+    overflow-x: auto;
+  }
+
+  .menu-sec {
+    gap: 20px;
+    font-size: 0.8rem;
+    flex-wrap: nowrap;
+  }
+
+  .search-box {
+    width: 140px;
+    padding: 8px 12px;
+  }
+
+  .search-box:focus-within {
+    width: 180px;
+  }
+
+  .dropdown {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+}
